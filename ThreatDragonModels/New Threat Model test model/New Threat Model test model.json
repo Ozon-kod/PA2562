@@ -17,9 +17,18 @@
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
         "version": "2.6.0",
         "cells": []
+      },
+      {
+        "id": 3,
+        "title": "New generic diagram",
+        "diagramType": "Generic",
+        "placeholder": "New generic diagram description",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
+        "version": "2.6.0",
+        "cells": []
       }
     ],
-    "diagramTop": 3,
+    "diagramTop": 4,
     "reviewer": "myself too",
     "threatTop": 0
   }
