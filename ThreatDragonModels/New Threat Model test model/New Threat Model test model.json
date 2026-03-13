@@ -1079,6 +1079,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 15,
             "ports": {
               "groups": {
                 "top": {
@@ -1162,7 +1163,6 @@
               ]
             },
             "id": "d7d28c94-8557-4025-a606-aa72762df9c9",
-            "zIndex": 15,
             "data": {
               "type": "tm.Process",
               "name": "Security Filter\n",
@@ -1199,6 +1199,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 16,
             "ports": {
               "groups": {
                 "top": {
@@ -1282,7 +1283,6 @@
               ]
             },
             "id": "e85658d7-428b-4329-bcb8-df0af0e4e140",
-            "zIndex": 16,
             "data": {
               "type": "tm.Process",
               "name": "Evaluation",
@@ -1322,6 +1322,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 17,
             "ports": {
               "groups": {
                 "top": {
@@ -1405,7 +1406,6 @@
               ]
             },
             "id": "0916a195-3637-41f9-92e8-164983dc9713",
-            "zIndex": 17,
             "data": {
               "type": "tm.Store",
               "name": "PostgreSQL",
