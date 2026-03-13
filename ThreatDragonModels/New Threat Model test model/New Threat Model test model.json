@@ -676,67 +676,6 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Chat history\nPrevious prompt",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": true,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [
-                {
-                  "id": "1a5101b5-23d8-4515-acf3-19df6cfe9984",
-                  "title": "Cross-user data exposure",
-                  "status": "Mitigated",
-                  "severity": "High",
-                  "type": "Information disclosure",
-                  "description": "A user accesses another user’s chat history, outcomes, or retrieved context due to broken isolation.",
-                  "mitigation": "Session validation, tenant isolation, access controls, scoped retrieval",
-                  "modelType": "default",
-                  "new": false,
-                  "number": 5,
-                  "score": ""
-                }
-              ],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "Chat history\nPrevious prompt"
-            ],
-            "id": "e5f325e2-20e7-43ae-9e09-e4180aa8cdc2",
-            "source": {
-              "cell": "dcd9662a-d8b8-4cb2-98e5-c026861666bf",
-              "port": "00811499-0c92-48ce-ac21-bf74dd21ec01"
-            },
-            "target": {
-              "cell": "0916a195-3637-41f9-92e8-164983dc9713",
-              "port": "530c7f4d-d501-4d28-b779-32b18ec664e0"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
                 "stroke": "red",
                 "strokeWidth": 2.5,
                 "targetMarker": {
@@ -793,17 +732,68 @@
               "cell": "febe8ee1-dff2-48a9-8385-6c06d589e363",
               "port": "80dd9827-e764-40a9-a265-5332d5c79db8"
             },
-            "vertices": [],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Chat history\nPrevious prompt",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "1a5101b5-23d8-4515-acf3-19df6cfe9984",
+                  "title": "Cross-user data exposure",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "A user accesses another user’s chat history, outcomes, or retrieved context due to broken isolation.",
+                  "mitigation": "Session validation, tenant isolation, access controls, scoped retrieval",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 5,
+                  "score": ""
+                }
               ],
-              "name": null
-            }
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Chat history\nPrevious prompt"
+            ],
+            "id": "e5f325e2-20e7-43ae-9e09-e4180aa8cdc2",
+            "source": {
+              "cell": "dcd9662a-d8b8-4cb2-98e5-c026861666bf",
+              "port": "00811499-0c92-48ce-ac21-bf74dd21ec01"
+            },
+            "target": {
+              "cell": "0916a195-3637-41f9-92e8-164983dc9713",
+              "port": "530c7f4d-d501-4d28-b779-32b18ec664e0"
+            },
+            "vertices": []
           },
           {
             "position": {
@@ -1059,11 +1049,13 @@
                 "text": "Vector DB"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1160,13 +1152,27 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "0b464370-5229-460b-ad23-140ed10c7020",
+                  "title": "Vector database poisoning",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Tampering",
+                  "description": "Attackers insert false or malicious knowledge into the vector database so retrieval returns unsafe context.",
+                  "mitigation": "Controlled ingestion, document validation, source verification, review workflow",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 9,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -1806,6 +1812,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "myself too",
-    "threatTop": 8
+    "threatTop": 9
   }
 }
