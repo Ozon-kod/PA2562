@@ -322,58 +322,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Constructed Prompt",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "Constructed Prompt"
-            ],
-            "id": "86fbe848-bd16-4ef7-bce6-952afc158312",
-            "source": {
-              "x": 780,
-              "y": 250
-            },
-            "target": {
-              "cell": "d7d28c94-8557-4025-a606-aa72762df9c9",
-              "port": "6f20cbc9-dcee-4a2f-9519-0af9fce806ef"
-            },
-            "vertices": [
-              {
-                "x": 820,
-                "y": 250
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Model output\n",
               "description": "",
               "outOfScope": false,
@@ -545,100 +493,6 @@
                   "name": "block"
                 },
                 "sourceMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Chat history\nPrevious prompt",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": true,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "Chat history\nPrevious prompt"
-            ],
-            "id": "e5f325e2-20e7-43ae-9e09-e4180aa8cdc2",
-            "source": {
-              "cell": "dcd9662a-d8b8-4cb2-98e5-c026861666bf",
-              "port": "00811499-0c92-48ce-ac21-bf74dd21ec01"
-            },
-            "target": {
-              "cell": "0916a195-3637-41f9-92e8-164983dc9713",
-              "port": "530c7f4d-d501-4d28-b779-32b18ec664e0"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Embedding query\nRetrieved context",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": true,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "Embedding query\nRetrieved context"
-            ],
-            "id": "9e9ae43f-fd92-4250-a095-4f80e0c18b48",
-            "source": {
-              "cell": "0c8867a9-2740-4c45-96dd-95dd87ce07d9",
-              "port": "bdb724ca-162f-4d46-9a33-a1c68dbca226"
-            },
-            "target": {
-              "cell": "febe8ee1-dff2-48a9-8385-6c06d589e363",
-              "port": "80dd9827-e764-40a9-a265-5332d5c79db8"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
                   "name": ""
                 },
                 "strokeDasharray": null
@@ -714,13 +568,26 @@
                   "id": "2971872e-2627-478d-b91a-6c65951a5d4d",
                   "title": "Prompt injection",
                   "status": "Open",
-                  "severity": "TBD",
+                  "severity": "Low",
                   "type": "Tampering",
                   "description": "A malicious user crafts prompts to override instructions, reveal hidden prompts, or manipulate model behavior.",
                   "mitigation": "Input validation, prompt isolation, system prompt hardening, output filtering, adversarial testing",
                   "modelType": "default",
                   "new": false,
                   "number": 2,
+                  "score": ""
+                },
+                {
+                  "id": "5007ef70-4b5c-4820-be6b-1cef992f5dd9",
+                  "title": "Unauthorized API access",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "An attacker bypasses the frontend and sends requests directly to backend APIs without proper authorization.",
+                  "mitigation": "Strong authentication, token validation, authorization checks, rate limiting",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 4,
                   "score": ""
                 }
               ],
@@ -748,10 +615,195 @@
                 "y": 290
               },
               {
-                "x": 400,
+                "x": 360,
                 "y": 255
               }
             ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Constructed Prompt",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Constructed Prompt"
+            ],
+            "id": "86fbe848-bd16-4ef7-bce6-952afc158312",
+            "source": {
+              "x": 780,
+              "y": 250
+            },
+            "target": {
+              "cell": "d7d28c94-8557-4025-a606-aa72762df9c9",
+              "port": "6f20cbc9-dcee-4a2f-9519-0af9fce806ef"
+            },
+            "vertices": [
+              {
+                "x": 890,
+                "y": 250
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Chat history\nPrevious prompt",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "1a5101b5-23d8-4515-acf3-19df6cfe9984",
+                  "title": "Cross-user data exposure",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "A user accesses another user’s chat history, outcomes, or retrieved context due to broken isolation.",
+                  "mitigation": "Session validation, tenant isolation, access controls, scoped retrieval",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 5,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Chat history\nPrevious prompt"
+            ],
+            "id": "e5f325e2-20e7-43ae-9e09-e4180aa8cdc2",
+            "source": {
+              "cell": "dcd9662a-d8b8-4cb2-98e5-c026861666bf",
+              "port": "00811499-0c92-48ce-ac21-bf74dd21ec01"
+            },
+            "target": {
+              "cell": "0916a195-3637-41f9-92e8-164983dc9713",
+              "port": "530c7f4d-d501-4d28-b779-32b18ec664e0"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Embedding query\nRetrieved context",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "77a9eadb-b62c-4a24-83ea-36013686c189",
+                  "title": "Indirect prompt injection",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "Malicious text stored in retrieved documents influences the final prompt and changes the model’s behavior.\n",
+                  "mitigation": "Document sanitization, trust scoring for sources, retrieval filtering, context labeling, prompt segmentation\n",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Embedding query\nRetrieved context"
+            ],
+            "id": "9e9ae43f-fd92-4250-a095-4f80e0c18b48",
+            "source": {
+              "cell": "0c8867a9-2740-4c45-96dd-95dd87ce07d9",
+              "port": "bdb724ca-162f-4d46-9a33-a1c68dbca226"
+            },
+            "target": {
+              "cell": "febe8ee1-dff2-48a9-8385-6c06d589e363",
+              "port": "80dd9827-e764-40a9-a265-5332d5c79db8"
+            },
+            "vertices": [],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           },
           {
             "position": {
@@ -1131,8 +1183,8 @@
                 "text": "Primary LLM"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1229,17 +1281,31 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "75ccfafe-3500-457a-b9a6-66410d0df108",
+                  "title": "Denial of service through prompt flooding",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Denial of service",
+                  "description": "Attackers send many requests or extremely large prompts to consume compute and degrade service.",
+                  "mitigation": "Rate limiting, token limits, quotas, timeout controls",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 8,
+                  "score": ""
+                }
+              ]
             }
           },
           {
             "position": {
-              "x": 935,
+              "x": 945,
               "y": 195
             },
             "size": {
@@ -1251,8 +1317,8 @@
                 "text": "Guardrails"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1349,12 +1415,26 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "66325496-3df8-4162-8900-3027be3c5c03",
+                  "title": "Prompt security filter bypass",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Elevation of privilege",
+                  "description": "Carefully crafted prompts avoid detection and still reach the model with malicious instructions.",
+                  "mitigation": "Layered filtering, semantic detection, jailbreak testing, fallback blocking",
+                  "modelType": "default",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -1726,6 +1806,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "myself too",
-    "threatTop": 2
+    "threatTop": 8
   }
 }
